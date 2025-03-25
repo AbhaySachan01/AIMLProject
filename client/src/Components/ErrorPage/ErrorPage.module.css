@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    color: white;
+    text-align: center;
+  }
+  
+  .errorCode {
+    font-size: 6rem;
+    font-weight: bold;
+    animation: bounce 1.5s infinite;
+  }
+  
+  .errorMessage {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  
+  .homeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #9333ea;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .homeButton:hover {
+    background-color: #f3e8ff;
+  }
+  
+  /* Bounce Animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
