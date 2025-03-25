@@ -1,0 +1,118 @@
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Floating wave effect */
+  .container::before,
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    bottom: -50px;
+    left: -40%;
+    border-radius: 50%;
+    animation: waveMove 6s ease-in-out infinite alternate;
+  }
+  
+  .container::after {
+    top: -50px;
+    left: auto;
+    right: -40%;
+    animation-delay: 3s;
+  }
+  
+  /* Glassmorphism card effect */
+  .content {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 10px 40px rgba(255, 255, 255, 0.15);
+    animation: fadeIn 1s ease-in-out;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .content:hover {
+    transform: scale(1);
+  }
+  
+  /* Title Styling */
+  .title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For Webkit browsers */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+  }
+  
+  
+  /* Paragraph Styling */
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    opacity: 0.85;
+  }
+  
+  /* Highlight Section */
+  .highlight {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700;
+    animation: pulse 1.5s infinite alternate;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes waveMove {
+    from { transform: rotate(0deg) translateY(10px); }
+    to { transform: rotate(5deg) translateY(-10px); }
+  }
+  
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+  
+  @keyframes titleGlow {
+    from { text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); }
+    to { text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8); }
+  }
+  
